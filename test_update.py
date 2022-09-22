@@ -28,10 +28,25 @@ def update_version():
 		print("no update")
 	else:
 		print("can update to: ", new_version)
-		print(old_version)
-		print(new_version)
+		print("old_version ", old_version)
+		print("new_version ", new_version)
 		
 if __name__ == '__main__':
-	
 	update_version()
+	answer = input("Обновляемся?: ")
+	if answer == "Yes":
+		print("successful")
+	else:
+		break
 	update_file_version()
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
