@@ -24,6 +24,7 @@ def update_file_version():
 def update_version(): 	
 	old_version = get_old_ver()
 	new_version = get_new_ver()	
+	
 	if new_version == old_version:
 		print("no update")
 	else:
@@ -32,12 +33,12 @@ def update_version():
 		print("new_version ", new_version)
 		
 if __name__ == '__main__':
-	
-	answer = input("Обновляемся?: ")
-	if answer == "Yes" and new_version != old_version:
-		update_version()
-		update_file_version()
-		print("successful")
+	update_version()
+	if get_old_ver() != get_new_ver():
+		answer = input("Обновляемся? Yes or No: ")
+		if answer == "Yes":
+			update_file_version()
+			print("successful")
 	
 	
 	
