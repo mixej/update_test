@@ -32,13 +32,13 @@ def update_version():
 		print("new_version ", new_version)
 		
 if __name__ == '__main__':
-	update_version()
+	
 	answer = input("Обновляемся?: ")
-	if answer == "Yes":
+	if answer == "Yes" and new_version != old_version:
+		update_version()
+		update_file_version()
 		print("successful")
-	else:
-		break
-	update_file_version()
+	
 	
 	
 	
