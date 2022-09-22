@@ -6,7 +6,7 @@ import subprocess
 FILENAME = 'update_list.txt'
 
 
-def get_new_ver(new_version):
+def get_new_ver():
 	new_ver = subprocess.run(["git", "log", "--pretty=format:%s", "-1"], stdout=subprocess.PIPE, text=True, encoding='utf-8' )
 	return str(new_ver.stdout)
 	
@@ -22,17 +22,17 @@ def update_file_version():
 
 def update_version(): 	
 	old_version = get_old_ver()
-#	new_version = get_new_ver()	
+	new_version = get_new_ver()
 	
 	if new_version == old_version:
 		print("no update")
 		
-	elif :new_version != old_version:
+	elif new_version != old_version:
 		print("can update to: ", new_version)
 		print("old_version ", old_version)
 		print("new_version ", new_version)
 		answer = input("Обновляемся? Yes or No: ")
-			if answer == "Yes":
+		if answer == "Yes":
 			update_file_version()
 			print("successful")
 		
