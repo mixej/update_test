@@ -2,7 +2,6 @@
 #сравнение текущего номера версии на гитхабе с последним сохраненным в фаил
 import os
 import subprocess
-import update_num
 
 FILENAME = 'update_list.txt'
 
