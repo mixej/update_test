@@ -28,8 +28,7 @@ def update_version():
 		print("no update")
 		
 	else:
-		print("can update to: ", new_version)
-		print("old_version ", old_version)
+		print("can update to: ", new_version, "from: ", old_version)
 		answer = input("Обновляемся? Yes or No: ")
 		if answer == "Yes":
 			update_file_version()
