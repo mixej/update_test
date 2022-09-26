@@ -16,9 +16,9 @@ def get_old_ver():
 			old_ver = line
 			return str(old_ver)	
 
-def update_file_version():
+def update_file_version(new_ver):
 	with open(FILENAME,'w') as file:
-		file.write(get_new_ver())		
+		file.write(new_ver)		
 
 def update_version(): 	
 	old_version = get_old_ver()
@@ -27,10 +27,9 @@ def update_version():
 	if new_version == old_version:
 		print("no update")
 		
-	elif new_version != old_version:
+	else:
 		print("can update to: ", new_version)
 		print("old_version ", old_version)
-		print("new_version ", new_version)
 		answer = input("Обновляемся? Yes or No: ")
 		if answer == "Yes":
 			update_file_version()
